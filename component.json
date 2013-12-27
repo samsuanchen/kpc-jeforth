@@ -1,0 +1,33 @@
+{
+  "name": "kpc-jeforth",
+  "repo": "https://github.com/samsuanchen/kpc-jeforth.git",
+  "description": "hello world",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "ksanaforge/boot": "*",
+    "ksanaforge/kse": "*",
+    "brighthas/bootstrap": "*",
+    "component/jquery": "*",
+    "kpc-jeforth/main": "*",
+    "kpc-jeforth/forthcommand": "*",
+    "kpc-jeforth/forthoutput": "*"
+  },
+  "development": {},
+  "paths": [
+    "components",
+    "../kse-ui/components",
+    "../components"
+  ],
+  "local": [
+    "facebook/react"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "index.css"
+  ]
+}
