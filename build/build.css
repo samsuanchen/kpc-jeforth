@@ -6909,6 +6909,7 @@ td.visible-print {
 
 .main {}
 .forthcommand {font-size:200%;}
+input {width: 80%;}
 .forthoutput {font-size:200%;}
 
 #main {}
