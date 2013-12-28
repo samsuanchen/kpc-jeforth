@@ -4,7 +4,7 @@
 var forthoutput = React.createClass({
   render: function() {
     return (
-      <pre>
+      <pre className="forthoutput">
     {
         this.props.out.map(function(O){
           return O;

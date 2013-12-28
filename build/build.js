@@ -11989,6 +11989,7 @@ require.register("kpc-jeforth-main/index.js", function(exports, require, module)
 var Input=Require("forthcommand"); 
 var Output=Require("forthoutput"); 
 var KsanaVm=require('./jeforth');
+
 var out=[];
 var main = React.createClass({displayName: 'main',
   getInitialState: function() {
@@ -12092,10 +12093,18 @@ var forthcommand = React.createClass({displayName: 'forthcommand',
     var cmd=this.refs["cmd"].getDOMNode().value;
     this.props.exec(cmd);
   },
+  reload:function(){
+    var gui=global.window.nwDispatcher.requireNwGui();
+    var win = gui.Window.get();
+    gui.App.clearCache();
+    win.reload();
+  },
   render: function() {
     return (
-      React.DOM.div(null, 
-      React.DOM.input( {ref:"cmd", defaultValue:": sq dup * ; : 2sq sq 2 * ; 3 2sq ."}),React.DOM.button( {onClick:this.sendCmd}, "EXEC")
+      React.DOM.div( {className:"forthcommand"}, 
+      React.DOM.input( {ref:"cmd", defaultValue:": sq dup * ; : 2sq sq 2 * ; 3 2sq ."}),
+      React.DOM.button( {onClick:this.sendCmd}, "EXEC"),
+      React.DOM.button( {onClick:this.reload}, "Reload")
       )
     );
   }
@@ -12109,7 +12118,7 @@ require.register("kpc-jeforth-forthoutput/index.js", function(exports, require, 
 var forthoutput = React.createClass({displayName: 'forthoutput',
   render: function() {
     return (
-      React.DOM.pre(null, 
+      React.DOM.pre( {className:"forthoutput"}, 
     
         this.props.out.map(function(O){
           return O;

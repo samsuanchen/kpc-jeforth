@@ -3,6 +3,7 @@
 var Input=Require("forthcommand"); 
 var Output=Require("forthoutput"); 
 var KsanaVm=require('./jeforth');
+
 var out=[];
 var main = React.createClass({
   getInitialState: function() {
