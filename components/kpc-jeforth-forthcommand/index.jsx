@@ -9,7 +9,7 @@ var forthcommand = React.createClass({
   reload:function(){
     var gui=global.window.nwDispatcher.requireNwGui();
     var win = gui.Window.get();
-    gui.App.clearCache();
+    gui.App && gui.App.clearCache();
     win.reload();
   },
   render: function() {
